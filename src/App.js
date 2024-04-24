@@ -10,7 +10,7 @@ export default function App() {
 		const shownWarning = sessionStorage.getItem("shownWarning");
 		if (!shownWarning) {
 			alert(
-				"Warning: This API's free tier only gives 10 articles per request, and page=2 is not allowed for free. You will only see 10 articles in infinite scroll."
+				"Notificaion: This API's (Gnews.io) free tier only gives 10 articles per request and page=2 is not allowed for free. So, you will only see 10 articles repeatedly in infinite scroll."
 			);
 			sessionStorage.setItem("shownWarning", "true");
 		}
