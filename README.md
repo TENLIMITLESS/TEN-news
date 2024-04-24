@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# News Monkey
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+News Monkey is a React app that utilizes the [News API](https://gnews.io/) to fetch and display top headlines from various news categories.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To get a local copy up and running, follow these simple steps.
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js
+- npm or yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Clone the repo
+   ```sh
+   git clone https://github.com/amar-codingenthusiast/news-monkey3.git
+2. Change directory:
+   ```sh
+   cd news-monkey3
+3. Install dependencies:
+   ```sh
+   npm install
+4. Run the app:
+   ```sh
+   npm run start
+5. Open your browser and visit http://localhost:3000 to view the app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+ - View top headlines from various categories like Nation, World, Business, Sports, Entertainment, Health, Science, and Technology.
+ - Search for specific news using the search bar.
+ - Infinite Scrolls
+ - Top loading bar
+ - Function based components
+ - Responsive design for all devices
 
-### `npm run build`
+## Built with
+ - React.js
+ - News API
+ - Bootstrap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
+You can access the live version of News Monkey app [here](https://amar-codingenthusiast.github.io/news-monkey3)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Important Note
+ - The free tier of the GNews.io API only provides 10 articles per request, and navigating to other pages (2, 3, 4...) is not available. As a result, you will see the same 10 articles repeatedly in infinite scroll.
+ - 100 requests only per day.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
+Contributions are welcome! Here's how you can contribute:
 
-### `npm run eject`
+Fork the repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Create your feature branch (`git checkout -b feature/YourFeature`)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Commit your changes (`git commit -m 'Add some feature'`)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Push to the branch (`git push origin feature/YourFeature`)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a new Pull Request
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+This project is licensed under the terms of the MIT license. You can find the [LICENSE](LICENSE) file in the root directory of the project.
