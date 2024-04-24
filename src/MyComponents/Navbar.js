@@ -37,6 +37,16 @@ export default function Navbar(props) {
 							</NavLink>
 						</li>
 						<li className="nav-item">
+							<NavLink className="nav-link" to="/nation">
+								Nation
+							</NavLink>
+						</li>
+						<li className="nav-item">
+							<NavLink className="nav-link" to="/world">
+								World
+							</NavLink>
+						</li>
+						<li className="nav-item">
 							<NavLink className="nav-link" to="/business">
 								Business
 							</NavLink>

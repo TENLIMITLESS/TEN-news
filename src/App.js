@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./MyComponents/Navbar";
 import News from "./MyComponents/News";
 import Footer from "./MyComponents/Footer";
@@ -6,10 +6,19 @@ import LoadingBar from "react-top-loading-bar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
+	useEffect(() => {
+		const shownWarning = sessionStorage.getItem("shownWarning");
+		if (!shownWarning) {
+			alert(
+				"Warning: This API's free tier only gives 10 articles per request, and page=2 is not allowed for free. You will only see 10 articles in infinite scroll."
+			);
+			sessionStorage.setItem("shownWarning", "true");
+		}
+	}, []);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [progress, setProgress] = useState(0);
 	return (
-		<Router>
+		<Router basename="/news-monkey3">
 			<Navbar onSearch={(query) => setSearchQuery(query)} />
 			<LoadingBar
 				color="#f11946"
@@ -23,9 +32,28 @@ export default function App() {
 						element={
 							<News
 								key="general"
-								pageSize={6}
 								category="general"
 								searchQuery={searchQuery}
+								setProgress={setProgress}
+							/>
+						}
+					/>
+					<Route
+						path="/nation"
+						element={
+							<News
+								key="nation"
+								category="nation"
+								setProgress={setProgress}
+							/>
+						}
+					/>
+					<Route
+						path="/world"
+						element={
+							<News
+								key="world"
+								category="world"
 								setProgress={setProgress}
 							/>
 						}
@@ -35,7 +63,6 @@ export default function App() {
 						element={
 							<News
 								key="business"
-								pageSize={6}
 								category="business"
 								setProgress={setProgress}
 							/>
@@ -46,7 +73,6 @@ export default function App() {
 						element={
 							<News
 								key="sports"
-								pageSize={6}
 								category="sports"
 								setProgress={setProgress}
 							/>
@@ -57,7 +83,6 @@ export default function App() {
 						element={
 							<News
 								key="entertainment"
-								pageSize={6}
 								category="entertainment"
 								setProgress={setProgress}
 							/>
@@ -68,7 +93,6 @@ export default function App() {
 						element={
 							<News
 								key="health"
-								pageSize={6}
 								category="health"
 								setProgress={setProgress}
 							/>
@@ -79,7 +103,6 @@ export default function App() {
 						element={
 							<News
 								key="science"
-								pageSize={6}
 								category="science"
 								setProgress={setProgress}
 							/>
@@ -90,7 +113,6 @@ export default function App() {
 						element={
 							<News
 								key="technology"
-								pageSize={6}
 								category="technology"
 								setProgress={setProgress}
 							/>

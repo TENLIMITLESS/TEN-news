@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function NewsItem(props) {
-	let { title, desc, imgUrl, newsUrl, author, source, date } = props;
+	let { title, desc, imgUrl, newsUrl, source, date } = props;
 	return (
 		<div>
 			<div
 				className="card mx-auto"
-				style={{ width: "18rem", height: "28rem" }}
+				style={{ width: "18rem", height: "26rem" }}
 			>
 				<img
 					src={imgUrl}
@@ -29,7 +29,7 @@ export default function NewsItem(props) {
 					</p>
 					<p className="card-text my-1">
 						<small className="text-muted">
-							By {author ? author : "Unknown"}, {source} <br /> on{" "}
+							By {source} <br /> on{" "}
 							{new Date(date).toLocaleString("en-IN", {
 								timeZone: "Asia/Kolkata",
 							})}
