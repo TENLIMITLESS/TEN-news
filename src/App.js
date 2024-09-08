@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "./MyComponents/Navbar";
 import News from "./MyComponents/News";
 import Footer from "./MyComponents/Footer";
@@ -6,19 +6,10 @@ import LoadingBar from "react-top-loading-bar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
-	useEffect(() => {
-		const shownWarning = sessionStorage.getItem("shownWarning");
-		if (!shownWarning) {
-			alert(
-				"Notice: This API's (Gnews.io) free tier only gives 10 articles per request and page=2 is not allowed for free. So, you will only see 10 articles repeatedly in infinite scroll."
-			);
-			sessionStorage.setItem("shownWarning", "true");
-		}
-	}, []);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [progress, setProgress] = useState(0);
 	return (
-		<Router basename="/news-monkey3">
+		<Router>
 			<Navbar onSearch={(query) => setSearchQuery(query)} />
 			<LoadingBar
 				color="#f11946"

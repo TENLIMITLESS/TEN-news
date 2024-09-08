@@ -10,7 +10,7 @@ export default function Footer() {
 
 	return (
 		<footer style={footerStyle}>
-			<p className="text-center">Copyright &copy; NewsMonkey.com</p>
+			<p className="text-center">© 2024 TEN News. All rights reserved.</p>
 		</footer>
 	);
 }

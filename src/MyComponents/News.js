@@ -4,8 +4,7 @@ import Loading from "./Loading.gif";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News(props) {
-	const apikey = process.env.REACT_APP_API_KEY1;
-	// const apikey = process.env.REACT_APP_API_KEY2;
+	const apikey = process.env.REACT_APP_API_KEY;
 	const { category, setProgress, searchQuery } = props;
 	const [articles, setArticles] = useState([]);
 	const [page, setPage] = useState(1);
@@ -85,7 +84,7 @@ export default function News(props) {
 		<>
 			<h2 style={{ marginTop: "5rem", textAlign: "center" }}>
 				<u>
-					News Monkey - Top{" "}
+					Top{" "}
 					{category.charAt(0).toUpperCase() + category.slice(1)}{" "}
 					Headlines
 				</u>
@@ -98,6 +97,7 @@ export default function News(props) {
 						justifyContent: "center",
 						alignItems: "center",
 						color: "red",
+						textAlign: "center"
 					}}
 				>
 					<h3>Error: {error}</h3>

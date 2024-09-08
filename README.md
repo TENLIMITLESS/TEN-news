@@ -1,6 +1,6 @@
-# News Monkey
+# TEN News
 
-News Monkey is a React app that utilizes the [News API](https://gnews.io/) to fetch and display top headlines from various news categories.
+TEN News is a React app that utilizes the [GNews API](https://gnews.io/) to fetch and display top headlines from various news categories.
 
 ## Getting Started
 
@@ -15,10 +15,10 @@ To get a local copy up and running, follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/amar-codingenthusiast/news-monkey3.git
+   git clone https://github.com/TENLIMITLESS/ten-news.git
 2. Change directory:
    ```sh
-   cd news-monkey3
+   cd ten-news
 3. Install dependencies:
    ```sh
    npm install
@@ -37,15 +37,20 @@ To get a local copy up and running, follow these simple steps.
 
 ## Built with
  - React.js
- - News API
+ - GNews API
  - Bootstrap
 
 ## Deployment
-You can access the live version of News Monkey app [here](https://amar-codingenthusiast.github.io/news-monkey3)
+You can access the live version of News Monkey app [here](https://ten-news.vercel.app)
 
 ## Important Note
  - The free tier of the GNews.io API only provides 10 articles per request, and navigating to other pages (2, 3, 4...) is not available. As a result, you will see the same 10 articles repeatedly in infinite scroll.
  - 100 requests only per day.
+
+## Ownership and Permissions
+This project was originally created and developed by Amar Kumar as a personal project. Amar Kumar has granted permission to TEN Company to use, deploy, and maintain this project under their account. For more information or any inquiries, please contact Amar Kumar through the following platforms:
+- [GitHub](https://github.com/amar-codingenthusiast)
+- [LinkedIn](https://www.linkedin.com/in/amar-codingenthusiast)
 
 ## Contributing
 Contributions are welcome! Here's how you can contribute:

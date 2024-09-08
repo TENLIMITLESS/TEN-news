@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import logo from "./NewsMonkeyLogo.png";
+import logo from "./icon.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar(props) {
@@ -10,28 +10,27 @@ export default function Navbar(props) {
 	const navbarContainerRef = useRef(null);
 
 	const handleIsOpen = useCallback(() => {
-		// if (window.innerWidth < 992) {
-			setIsOpen((prev) => !prev);
-			if (navbarRef.current) {
-				const collapseInstance = new window.bootstrap.Collapse(
-					navbarRef.current,
-					{
-						toggle: false,
-					}
-				);
-				isOpen ? collapseInstance.hide() : collapseInstance.show();
-			}
-		// }
+		setIsOpen((prev) => !prev);
+		if (navbarRef.current) {
+			const collapseInstance = new window.bootstrap.Collapse(
+				navbarRef.current,
+				{
+					toggle: false,
+				}
+			);
+			isOpen ? collapseInstance.hide() : collapseInstance.show();
+		}
 	}, [isOpen]);
 
 	const handleLinkClick = () => {
 		if (window.innerWidth < 992) {
-		if (navbarRef.current) {
-			const collapseInstance = new window.bootstrap.Collapse(
-				navbarRef.current
-			);
-			collapseInstance.hide();
-		}}
+			if (navbarRef.current) {
+				const collapseInstance = new window.bootstrap.Collapse(
+					navbarRef.current
+				);
+				collapseInstance.hide();
+			}
+		}
 	};
 
 	useEffect(() => {
@@ -57,7 +56,7 @@ export default function Navbar(props) {
 		>
 			<div className="container-fluid">
 				<Link className="navbar-brand" to="/">
-					<img src={logo} alt="logo" height="40px" /> News Monkey
+					<img src={logo} alt="logo" height="40px" /> TEN News
 				</Link>
 				<button
 					className="navbar-toggler"
