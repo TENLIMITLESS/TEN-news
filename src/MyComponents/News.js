@@ -4,14 +4,14 @@ import Loading from "./Loading.gif";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News(props) {
-	// const apikey = process.env.REACT_APP_API_KEY1;
-	const apikey = process.env.REACT_APP_API_KEY2;
+	const apikey = process.env.REACT_APP_API_KEY1;
+	// const apikey = process.env.REACT_APP_API_KEY2;
 	const { category, setProgress, searchQuery } = props;
 	const [articles, setArticles] = useState([]);
 	const [page, setPage] = useState(1);
 	const [totalArticles, setTotalArticles] = useState(0);
 	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(null);
 
 	const fetchData = useCallback(async () => {
 		try {
@@ -22,8 +22,13 @@ export default function News(props) {
 			setProgress(25);
 			let data = await fetch(url);
 			if (data.status === 403) {
-				setError(true);
+				setError("API daily limit exceeded. Please try again after 24 hours.");
 				return;
+			} else if(data.status === 429) {
+				setError("Too Many Requests. Please try again later.");
+				return;
+			} else if(data.status !== 200) {
+				setError("Unable to fetch data.");
 			}
 			setProgress(50);
 			let parsedData = await data.json();
@@ -34,7 +39,8 @@ export default function News(props) {
 			setLoading(false);
 		} catch (error) {
 			console.error("Error fetching data:", error);
-			setError(true);
+			setError("An unexpected error occurred. Please try again.");
+			setLoading(false);
 		}
 	}, [apikey, setProgress, category, searchQuery]);
 
@@ -46,15 +52,20 @@ export default function News(props) {
 				: `https://gnews.io/api/v4/top-headlines?category=${category}&page=${nextPage}&lang=en&country=in&max=10&apikey=${apikey}`;
 			let data = await fetch(url);
 			if (data.status === 403) {
-				setError(true);
+				setError("API daily limit exceeded. Please try again after 24 hours.");
 				return;
+			} else if(data.status === 429) {
+				setError("Too Many Requests. Please try again later.");
+				return;
+			} else if(data.status !== 200) {
+				setError("Unable to fetch data.");
 			}
 			let parsedData = await data.json();
 			setArticles([...articles, ...parsedData.articles]);
 			setPage(nextPage);
 		} catch (error) {
 			console.error("Error fetching more data:", error);
-			setError(true);
+			setError("An unexpected error occurred. Please try again.");
 		}
 	};
 
@@ -89,7 +100,7 @@ export default function News(props) {
 						color: "red",
 					}}
 				>
-					<h3>Error: API daily limit exceeded. Please try again later.</h3>
+					<h3>Error: {error}</h3>
 				</div>
 			) : (
 				<InfiniteScroll
