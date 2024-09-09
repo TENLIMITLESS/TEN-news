@@ -4,7 +4,8 @@ import Loading from "./Loading.gif";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News(props) {
-	const apikey = process.env.REACT_APP_API_KEY;
+	// const apikey = process.env.REACT_APP_API_KEY;
+	const apikey = "73c1cf200427d63e1e331cbd47b3d343";
 	const { category, setProgress, searchQuery } = props;
 	const [articles, setArticles] = useState([]);
 	const [page, setPage] = useState(1);
