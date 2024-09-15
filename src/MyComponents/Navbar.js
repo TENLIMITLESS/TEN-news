@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import logo from "./icon.png";
+// import logo from "./icon.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar(props) {
@@ -56,7 +56,8 @@ export default function Navbar(props) {
 		>
 			<div className="container-fluid">
 				<Link className="navbar-brand" to="/">
-					<img src={logo} alt="logo" height="40px" /> TEN News
+					// <img src={logo} alt="logo" height="40px" /> TEN News
+					News
 				</Link>
 				<button
 					className="navbar-toggler"
