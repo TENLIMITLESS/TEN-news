@@ -56,7 +56,7 @@ export default function Navbar(props) {
 		>
 			<div className="container-fluid">
 				<Link className="navbar-brand" to="/">
-					// <img src={logo} alt="logo" height="40px" /> TEN News
+					{/*<img src={logo} alt="logo" height="40px" /> TEN News*/}
 					News
 				</Link>
 				<button
