@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./MyComponents/Navbar";
 import News from "./MyComponents/News";
-// import Footer from "./MyComponents/Footer";
 import LoadingBar from "react-top-loading-bar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -111,7 +110,6 @@ export default function App() {
 					/>
 				</Routes>
 			</div>
-			// <Footer />
 		</Router>
 	);
 }
